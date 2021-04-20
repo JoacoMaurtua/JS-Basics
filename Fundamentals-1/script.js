@@ -100,7 +100,7 @@ console.log(promArray(Arr));
 /****EXERCISE 7****/
 /*Array de impares: Escribe una función que devuelva un array de todos los números impares entre 1 y 50 (ej: [1,3,5, …, 47,49]). Pista: Usa el método ‘push’.*/ 
 
-function arrayImpares(){
+/*function arrayImpares(){
   Arr = [];
   for(let i = 1; i<=50; i++){
     if(i%2 !== 0){
@@ -111,3 +111,51 @@ function arrayImpares(){
 }
 
 console.log(arrayImpares());
+
+
+/****EXERCISE 8****/
+/*Mayor que Y: Dado un valor Y, escribe una función que toma un array y devuelve los valores mayores que Y. Por ejemplo, si arr = [1,3,5,7] y Y = 3, tu función devolverá 2 (hay 2 números en el array mayores que 3, esto son 5 y 7). */ 
+
+/*function cuantosMayores(Arr,y)
+{
+  let count = 0;
+  for(let i = 0; i<Arr.length; i++)
+  {
+    if(Arr[i]>y){
+      count++;
+    }
+  }
+  return count;
+}
+
+arr = [1,3,5,7,9,11];
+console.log(cuantosMayores(arr,3));
+
+/****EXERCISE 9****/
+/*Cuadrados: Dado un array con múltiples valores, escribe una función que reemplace cada valor por el cuadrado del mismo valor (ej: [1,5,10,-2] será [1,25,100,4]).*/ 
+
+/*function cuadrados(Arr){
+  for(let i = 0; i<Arr.length; i++)
+  {
+    Arr[i] *= Arr[i];
+  }
+  return Arr;
+}
+
+arr = [1,5,10,-2];
+console.log(cuadrados(arr));
+
+/****EXERCISE 10****/
+/*Negativos: Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0. Cuando el programa esté listo, el array no debiera contener números negativos (ej: [1,5,10,-2] se convertirá en [1,5,10,0]).*/
+
+function replaceNegatives(Arr){
+  for(let i = 0; i<Arr.length; i++){
+    if(Arr[i]<0){
+      Arr[i] = 0;
+    }
+  }
+  return Arr;
+}
+
+arr = [-1,5,10,-2];
+console.log(replaceNegatives(arr));
