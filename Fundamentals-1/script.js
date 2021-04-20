@@ -148,7 +148,7 @@ console.log(cuadrados(arr));
 /****EXERCISE 10****/
 /*Negativos: Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0. Cuando el programa esté listo, el array no debiera contener números negativos (ej: [1,5,10,-2] se convertirá en [1,5,10,0]).*/
 
-function replaceNegatives(Arr){
+/*function replaceNegatives(Arr){
   for(let i = 0; i<Arr.length; i++){
     if(Arr[i]<0){
       Arr[i] = 0;
@@ -159,3 +159,65 @@ function replaceNegatives(Arr){
 
 arr = [-1,5,10,-2];
 console.log(replaceNegatives(arr));
+
+/****EXERCISE 11****/
+/*Max/Min/Avg: Dado un array con múltiples valores, escribe una función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original (ej: [1,5,10,-2] devolverá [10,-2,3.5]).*/ 
+
+/*function MaxMinAvg(Arr){
+  max = min = Arr[0];
+  sum = 0;
+  Arr2 = [];
+  for(let i = 0; i<Arr.length; i++){
+    sum += Arr[i];
+    if(Arr[i]>max){
+      max = Arr[i];
+    }
+    else if(Arr[i]<min){
+      min = Arr[i];
+    }
+  }
+  prom = sum/Arr.length;
+  Arr2.push(max); Arr2.push(min); Arr2.push(prom);
+  return Arr2;
+}
+
+arr = [1,5,10,-2];
+console.log(MaxMinAvg(arr)); 
+
+/****EXERCISE 12****/
+/*Intercambia Valores: Escribe una función que intercambie el primer y el último valor de cualquier array. La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]). 
+*/ 
+
+/*function swapArray(Arr){
+  if(Arr.length < 2){
+    console.log('El array solo tiene un elemento');
+  }
+  else{
+    temp = Arr[0];
+    Arr[0] = Arr[Arr.length-1];
+    Arr[Arr.length-1] = temp;
+  }
+
+  return Arr;
+}
+
+arr = [1,5,10,-2];
+console.log(swapArray(arr));
+
+
+/****EXERCISE 13****/
+/*De Número a String: Escribe una función que tome un array de números y reemplace cualquier valor negativo por el string ‘Dojo’. Por ejemplo, dado el array = [-1,-3,2], tu función devolverá [‘Dojo’,‘Dojo’,2].
+*/ 
+
+function replaceWithDojo(Arr){
+  for(let i = 0; i<Arr.length; i++){
+    if(Arr[i]<0){
+      Arr[i] = 'Dojo'
+    }
+  }
+  return Arr;
+
+}
+
+arr = [-1,-3,2];
+console.log(replaceWithDojo(arr));
