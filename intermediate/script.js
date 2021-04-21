@@ -58,7 +58,7 @@ function FibonacciNormal(num){
     return 1;
   }
   else{
-    for(let i = 2; i<=num; i++){
+    for(let i = 2; i<=num-1; i++){
         temp = ant1+ant2;
         ant2 = ant1;
         ant1 = temp;
@@ -68,16 +68,16 @@ function FibonacciNormal(num){
   }
   return temp;
 }
- y = FibonacciNormal(5);
- console.log(y);
+ y = FibonacciNormal(7);
+ console.log('Iterativamente',y);
 
 
  function FibonacciRecurs(num){
   if(num == 0 || num == 1){
-    return 1;
+    return num;
   }
   else{
-    return FibonacciRecurs(num-2) + FibonacciRecurs(num-1);
+    return FibonacciRecurs(num-1) + FibonacciRecurs(num-2);
   }
 
  }
@@ -85,3 +85,4 @@ function FibonacciNormal(num){
  x = FibonacciRecurs(7);
  console.log('recursivamente: ',x);
 
+ 
