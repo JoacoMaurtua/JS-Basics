@@ -189,7 +189,7 @@ console.log(newnegative(arr));
 /******EXERCISE 12*****/
 /*Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */ 
 
-function yummy(arr){
+/*function yummy(arr){
     let correct = false;
     let i = 0;
     while(i<arr.length){
@@ -206,3 +206,33 @@ function yummy(arr){
 
 arr = [1,4,6,'comioda', 'despues', 'coomida',7];
 yummy(arr);
+
+/******EXERCISE 13*****/
+/**Cambiar hacia el centro -  Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, 2, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. */
+
+/*function changePositions(arr){
+      for(let i = 0; i<arr.length/2; i+=2){
+        temp = arr[i];
+        arr[i] = arr[arr.length-i-1];
+        arr[arr.length-i-1] = temp;
+      }
+      console.log(arr);
+}
+
+arr = [1,2,3,4,5,6];
+changePositions(arr);
+
+
+/******EXERCISE 14*****/
+/**Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].
+ */
+
+function multiply(arr,num){
+  for(let i = 0; i<arr.length; i++){
+    arr[i] *= num;
+  }
+  return arr;
+
+}
+
+console.log(multiply([1,2,3], 3));
