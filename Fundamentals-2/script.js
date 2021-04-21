@@ -140,7 +140,7 @@ console.log(replaceForNumbers(arr));
 /******EXERCISE 9*****/
 /**Agrega Siete - Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3]) debería devolver [8,9,10] en un nuevo array.  */
 
-function addSeven(arr){
+/*function addSeven(arr){
   newArr = [];
   for(let i = 0; i<arr.length; i++){
     newArr.push(arr[i]+7);
@@ -150,3 +150,59 @@ function addSeven(arr){
 
 arr = [1,2,3];
 console.log(addSeven(arr));
+
+/******EXERCISE 10*****/
+/*Array Inverso - Dado un array, escribe una función que invierte sus valores en el lugar. Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3]. Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores).*/ 
+
+/*function reverse(arr){
+  for(let i = 0; i<arr.length/2; i++){
+      temp = arr[i];
+      arr[i] = arr[arr.length-i-1];
+      arr[arr.length-i-1] = temp;
+
+  }
+  return arr;
+}
+
+arr = [3,1,6,4,2];
+console.log(reverse(arr));
+
+/******EXERCISE 11*****/
+/*Perspectiva: Negativa - Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5].*/
+
+/*function newnegative(arr){
+  newArr = [];
+  for(let i =0; i<arr.length; i++){
+    if(arr[i]>0){
+      newArr.push(arr[i]*-1);
+    }
+    else{
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+arr = [1,-3,5];
+console.log(newnegative(arr));
+
+/******EXERCISE 12*****/
+/*Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */ 
+
+function yummy(arr){
+    let correct = false;
+    let i = 0;
+    while(i<arr.length){
+      if(arr[i] == 'comida'){
+        console.log('yummy');
+        correct = true;
+      }
+      i++;
+    }
+    if(correct == false){
+        console.log('tengo hambre');
+    }
+}
+
+arr = [1,4,6,'comioda', 'despues', 'coomida',7];
+yummy(arr);
