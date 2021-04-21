@@ -86,7 +86,7 @@ console.log(replacePositives(arr));
 /******EXERCISE 6*****/
 /*Pares e Impares - Crea una función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”.*/ 
 
-function impar(a){
+/*function impar(a){
   return a%2 != 0;
 }
 
@@ -107,3 +107,46 @@ function PartialImpartial(arr){
 
 arr = [1,2,6,3,9,11,10];
 PartialImpartial(arr);
+
+/******EXERCISE 7*****/
+/*Incrementa los Segundos - Dado un array de números arr, agrega 1 a cualquier otro elemento, específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, console.log cada valor del array y devuelve arr.*/
+
+/*function addOneImpar(arr){
+  for(let i = 0; i<arr.length; i++){
+    if(i%2 != 0){
+      arr[i] += 1;
+      console.log(arr[i]);
+    }
+  }
+  return arr;
+}
+
+arr = [1,2,3,4,5,6,7];
+console.log(addOneImpar(arr));
+
+/******EXERCISE 8*****/
+/*Longitudes previas - Pasado un array (similar a decir ‘tomado un array’ o ‘dado un array’) que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante?*/
+
+/*function replaceForNumbers(arr){
+  for(let i = arr.length-1; i>0; i--){
+    arr[i] = arr[i-1].length;
+  }
+  return arr;
+}
+
+arr = ['programar', 'dojo', 'genial'];
+console.log(replaceForNumbers(arr));
+
+/******EXERCISE 9*****/
+/**Agrega Siete - Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3]) debería devolver [8,9,10] en un nuevo array.  */
+
+function addSeven(arr){
+  newArr = [];
+  for(let i = 0; i<arr.length; i++){
+    newArr.push(arr[i]+7);
+  }
+  return newArr;
+}
+
+arr = [1,2,3];
+console.log(addSeven(arr));
