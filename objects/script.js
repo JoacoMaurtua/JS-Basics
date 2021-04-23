@@ -29,7 +29,7 @@ console.log(dojo["name"]);
 
 /**********Arrays de Objetos***********/
 
-var glazedDonuts = [ //arrat de objetos
+/*var glazedDonuts = [ //arrat de objetos
 
   {                              //glazedDonuts[0]
     frosting: 'glazed',
@@ -61,7 +61,7 @@ var glazedDonuts = [ //arrat de objetos
 ¿Puedo comprar la primera dona en el estante si esta ha estado fuera del horno 
 por menos de 25 minutos? Esta conversación llevada a código sería algo como esto:*/ 
 
-var purchase;
+/*var purchase;
 
 if(glazedDonuts[0].age < 25 && glazedDonuts[0].time == 'minutes' || glazedDonuts[0].time == 'seconds'){
   purchase = glazedDonuts[0];
@@ -73,7 +73,7 @@ else{
 /*Digamos que Mike decide usar todo lo que tiene en el bolsillo para comprarse cuantas donas pueda. 
 Revisemos todas las donas disponibles para ver cuántas puede comprar.*/ 
 
-var numPurchase = 0;
+/*var numPurchase = 0;
 for (var donut in glazedDonuts){               //array para recorrer un objeto, donut es un iterador que recorre glazedDonuts
   console.log(glazedDonuts[donut].type);
   if((glazedDonuts[donut].age < 25 && glazedDonuts[donut].time == 'minutes') || glazedDonuts[donut].time == 'seconds'){
@@ -84,3 +84,22 @@ for (var donut in glazedDonuts){               //array para recorrer un objeto, 
    }
 }
 console.log(numPurchase);
+
+
+/********Objetos construidos********/
+
+function Persona(nombre, edad, sexo, pasatiempos) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.sexo = sexo;
+  this.pasatiempos = pasatiempos;
+  this.hablar = function() {
+    return `hola soy ${this.nombre}, y tengo ${this.edad} años`;
+  };
+}
+
+const camilo = new Persona('camilo', 22, 'masculino', ['patinar', 'bailar']);
+
+console.log(camilo)
+
+
