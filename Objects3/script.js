@@ -1,7 +1,7 @@
 /*******EJERCICIO 1*******/
 
 /* 
-Ej 3: Filtrando propiedades.
+Filtrando propiedades.
 
 En este ejercicio deberás definir una función que reciba como primer 
 parámetro un arreglo de objetos y como segundo parámetro un arreglo de strings.
@@ -11,7 +11,7 @@ La función devolverá un nuevo arreglo que en cada índice tendrá el valor que
 (correspondiente al primer arreglo) en la propiedad que indique el segundo arreglo.
 Para clarificar la consigna, a continuación hay un ejemplo:
 
-objetos = [{forma: 'circulo' tamaño: 3},
+objetos = [{forma: 'circulo' color: 'verde' tamaño: 3},
 
           {forma: “triangulo”, color: 'amarillo', tamaño: 4}]
 
@@ -111,8 +111,7 @@ function valorStock(arrayProductos) {
 
   for (let i = 0; i < arrayProductos.length; i++) {
     let objeto = {};
-    objeto[arrayProductos[i]['nombre']] =
-      arrayProductos[i]['precio'] * arrayProductos[i]['stock'];
+    objeto[arrayProductos[i]['nombre']] = arrayProductos[i]['precio'] * arrayProductos[i]['stock'];
     newArray.push(objeto);
   }
 
@@ -160,11 +159,9 @@ function Continentes(arrayObjetos) {
   let newArray = [];
   let continente = {};
   for (let i = 0; i < arrayObjetos.length; i++) {
-    continente[arrayObjetos[i]['nombre']] = (
-      arrayObjetos[i]['poblacion'] / arrayObjetos[i]['superficie']
-    ).toFixed(2);
+    continente[arrayObjetos[i]['nombre']] = (arrayObjetos[i]['poblacion'] / arrayObjetos[i]['superficie']).toFixed(2);
   }
-  //newArray.push(continente);
+  newArray.push(continente);
   return continente;
 }
 
@@ -192,7 +189,6 @@ function doubleFilter(arrayObjs,continente,poblacion){
     }
   }
   return paisesCumplen;
-
 }
 
 
@@ -269,5 +265,65 @@ var paises = [
   },
 ];
 
-console.log(doubleFilter(paises,'europa',5000000));
+//console.log(doubleFilter(paises,'sudamerica',5000000));
 
+/*******EJERCICIO 6******/
+/* Doble Filtro II
+
+Ahora deben refactorizar la función doubleFilter, que recibirá los mismos tres parámetros pero en vez de devolver un arreglo con los nombres de los países que cumplan con las condiciones, devolverá un objeto con una key ‘nombres’ que tendrá como valor un arreglo con los nombres de los países y otra llamada ‘población total’ cuyo valor sea la suma de las poblaciones de los países filtrados.
+ */
+
+
+function doubleFilterII(arrayObjs,continente,poblacion){
+  let paisesCumplen = [];
+  let newPaises = {};
+  let sum = 0;
+  for(let i = 0; i<arrayObjs.length; i++){
+    if(arrayObjs[i]["continente"] === continente && arrayObjs[i]["poblacion"]>=poblacion){
+      paisesCumplen.push(arrayObjs[i]["nombre"]);
+      sum += arrayObjs[i]["poblacion"];
+    }
+  }
+  newPaises["nombres"] = paisesCumplen;
+  newPaises["Poblacion total"] = sum;
+  return newPaises;
+
+}
+
+
+//console.log(doubleFilterII(paises,"europa",12000000));
+
+/*******EJERCICIO 7******/
+
+/* Doble Filtro III
+
+Ahora, la función doubleFilter debe retornar un objeto que, además de tener las keys nombres y población total, tenga una key mayor y una menor en la que guarde el nombre de los países con mayor y menor población respectivamente.
+ */
+
+function doubleFilterIII(arrayObjs,continente,poblacion){
+  let paisesCumplen = [];
+  let newPaises = {};
+  let sum = 0;
+  let mayor = menor = arrayObjs[0]["poblacion"];
+  for(let i = 0; i<arrayObjs.length; i++){
+    if(arrayObjs[i]["continente"] === continente && arrayObjs[i]["poblacion"]>=poblacion){
+      paisesCumplen.push(arrayObjs[i]["nombre"]);
+      sum += arrayObjs[i]["poblacion"];
+      if(arrayObjs[i]["poblacion"]>mayor){
+        mayor = arrayObjs[i]["nombre"];
+      }
+      else if(arrayObjs[i]["poblacion"]<menor){
+        menor = arrayObjs[i]["nombre"];
+      }
+    }
+  }
+  newPaises["nombres"] = paisesCumplen;
+  newPaises["Poblacion total"] = sum;
+  newPaises["mayor"] = mayor;
+  newPaises["menor"] = menor;
+
+  return newPaises;
+
+}
+
+console.log(doubleFilterIII(paises,"sudamerica",12000000));
